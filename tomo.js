@@ -1,5 +1,3 @@
-max_size = 400;
-
 function loadImage(e) {
 	var file = e.target.files[0];
 	

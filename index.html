@@ -40,7 +40,11 @@
                         </span>
 						<input type="button" value="Project" onclick="backproject();" /><br />
 						
-						<progress id="progress" value="0" max="" />
+                        <progress id="progress" value="0" max=""></progress>
+
+                        <div id="source">
+                            Source on <a href="https://github.com/frapa/tomography">Github</a>.
+                        </div>
 					</div>
 			</td>
 			<td>
@@ -51,7 +55,7 @@
 				<h5>Sinogram</h5>
 				<div class="sino">
                     <span class='backprojection-container'>
-                        <canvas width="400" height="400" id="scan" style="margin-right: 30px;"></canvas>
+                        <canvas width="400" height="400" id="scan" style="margin-right: 40px;"></canvas>
                         <span class="option-overlay">
                             <a class="overlay-button" style="background-image: url(save.png);"
                                 download="sinogram.png" onclick="saveSinogram(event);"></a>

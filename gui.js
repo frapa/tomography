@@ -17,6 +17,8 @@ filter_options = [
 	}
 ]
 
+max_size = 400;
+
 function init()
 {
 	// Check for the various File API support.
@@ -26,15 +28,28 @@ function init()
 		alert('This script is not supported by your browser. I recommend using another browser.');
 	}
 	
+    if (window.innerHeight < 900) {
+        max_size = 300;
+	    
+        var canvas = document.getElementById('preview');
+        canvas.width = 300;
+        canvas.height = 300;
+
+        var canvas = document.getElementById('scan');
+        canvas.width = 300;
+        canvas.height = 300;
+    }
+
 	var bpdiv = document.getElementById('backprojections');
 	bpdiv.style.width = bpdiv.clientWidth + 'px';
-	//bpdiv.style.height = bpdiv.clientHeight + 'px';
 
     window.onresize = function ()
     {
 	    var bptd = document.getElementById('backprojections_td');
         bpdiv.style.width = bptd.clientWidth + 'px'
     }
+
+    bpdiv.style.height = (max_size + 20) + 'px';
 	
 	initFilters();
 }
@@ -122,8 +137,8 @@ function createBackCanvas() {
 	
 	var canvas = document.createElement('canvas');
 	canvas.className = 'back';
-	canvas.width = 400;
-	canvas.height = 400;
+	canvas.width = max_size;
+	canvas.height = max_size;
 
     var optionsOverlay = document.createElement('span');
     optionsOverlay.className = 'option-overlay';

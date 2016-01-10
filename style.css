@@ -20,14 +20,13 @@ td.panel {
 }
 
 div.sino {
-	height: 407px;
+	height: 100%;
 	overflow-y: auto;
 }
 
 #backprojections {
 	overflow-x: auto;
 	white-space: nowrap;
-	height: 420px;
 }
 
 div.settings {
@@ -43,14 +42,13 @@ canvas {
 }
 
 canvas.back {
-	width: 400px;
-	height: 400px;
 	margin-right: 40px;
 }
 
 h4 {
 	background: #00aaee;
 	padding: 0.25em 0.5em;
+	margin-top: 1em;
 	margin-bottom: 0.5em;
 	color: white;
 	text-shadow: 1px 1px 0 #0044dd;
@@ -82,14 +80,14 @@ h3 {
 
 progress {
 	width: 100%;
-	margin: 2em 0;
+	margin: 1em 0;
 }
 
 input[type="file"] {
 	border: 1px solid #ccc;
 	width: 100%;
 	border-radius: 2px;
-	margin: 0.2em 0 0.8em 0;
+	margin: 0.2em 0 0.5em 0;
 }
 
 div.select {
@@ -99,7 +97,7 @@ div.select {
 	background-image: url(tri.png);
 	background-repeat: no-repeat;
 	background-position: 95%;
-	margin: 1em 0;
+	margin: 0.7em 0;
 	border-radius: 2px;
 }
 
@@ -147,7 +145,7 @@ span.backprojection-container {
 
 span.backprojection-container span.option-overlay {
     position: absolute;
-    left: 405px;
+    right: 13px;
     display: none;
 }
 
@@ -173,7 +171,7 @@ span.backprojection-container:hover span.option-overlay {
 input[type=button] {
     width: 80%;
     margin: 0 10%;
-    padding: 0.5em;
+    padding: 0.3em;
 }
 
 input[type=checkbox] {
@@ -182,7 +180,7 @@ input[type=checkbox] {
 
 span.checkbox {
     display: block;
-    margin: 0.5em 0 1em 0;
+    margin: 0.3em 0 0.5em 0;
     padding: 0.2em 0 0.4em 0;
     font-size: 90%;
     border: 1px solid #f9f9f9;
@@ -192,4 +190,19 @@ span.checkbox {
 
 span.checkbox:hover {
     border: 1px solid #ccc;
+}
+
+#source {
+    color: #777;
+    margin-bottom: 0.5em;
+    font-size: 80%;
+    text-align: center;
+}
+
+a, a:visited {
+    color: #0044dd;
+}
+
+a:hover {
+    text-decoration: none;
 }
