@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Tomography</title>
+		<script type="text/javascript" src="complex_array.js"></script>
+		<script type="text/javascript" src="fft.js"></script>
+		<script type="text/javascript" src="graph.js"></script>
+		<script type="text/javascript" src="gui.js"></script>
+		<script type="text/javascript" src="tomo.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+	</head>
+	<body onload="init();">
+		<table>
+		<tr>
+			<td rowspan="2" class="panel">
+					<h3>Control panel</h3>			
+					<div class="settings">
+						<h4>Load data</h4>
+						Select image:<br />
+						<input type="file" id="file" onchange="loadImage(event);" /><br />
+						
+						Load sinogram:<br />
+						<input type="file" onchange="loadSinogram(event);" /><br />
+						
+						<h4>Acquire</h4>
+						Projections: <input type="number" id="projections" value="120"><br />
+                        <span class="checkbox" onclick="toggle('show_projection');">
+						    <input type="checkbox" id="show_projection" /> Projections in real time (slow)<br />
+                        </span>
+						<input type="button" value="Acquire" onclick="acquire();" /><br />
+						
+						<h4>Filter</h4>
+						<div class="select" id="filters"></div>
+						<input type="button" value="Filter" onclick="filter();" /><br />
+						
+						<h4>Backproject</h4>
+                        <span class="checkbox" onclick="toggle('show_backprojection');">
+						    <input type="checkbox" id="show_backprojection" /> Backprojections in real time (slow)<br />
+                        </span>
+						<input type="button" value="Project" onclick="backproject();" /><br />
+						
+						<progress id="progress" value="0" max="" />
+					</div>
+			</td>
+			<td>
+				<h5>Original picture</h5>
+                <canvas width="400" height="400" id="preview"></canvas>
+			</td>
+			<td>
+				<h5>Sinogram</h5>
+				<div class="sino">
+                    <span class='backprojection-container'>
+                        <canvas width="400" height="400" id="scan" style="margin-right: 30px;"></canvas>
+                        <span class="option-overlay">
+                            <a class="overlay-button" style="background-image: url(save.png);"
+                                download="sinogram.png" onclick="saveSinogram(event);"></a>
+                        </span>
+                    </span>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" id="backprojections_td">
+				<h5>Reconstructed images</h5>
+				<div id="backprojections"></div>
+			</td>
+		</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,195 @@
+body {
+	margin: 1em;
+	font-size: 90%;
+}
+
+table {
+	width: 100%;
+}
+
+td {
+	padding: 0 2em;
+	text-align: center;
+	vertical-align: top;
+}
+
+td.panel {
+	padding: 0;
+	width: 400px;
+	text-align: left;
+}
+
+div.sino {
+	height: 407px;
+	overflow-y: auto;
+}
+
+#backprojections {
+	overflow-x: auto;
+	white-space: nowrap;
+	height: 420px;
+}
+
+div.settings {
+	padding: 0 1em;
+	border: 1px solid #ccc;
+	box-shadow: 1px 1px 2px #ddd;
+	background: #f9f9f9;
+}
+
+canvas {
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+canvas.back {
+	width: 400px;
+	height: 400px;
+	margin-right: 40px;
+}
+
+h4 {
+	background: #00aaee;
+	padding: 0.25em 0.5em;
+	margin-bottom: 0.5em;
+	color: white;
+	text-shadow: 1px 1px 0 #0044dd;
+	box-shadow: 1px 1px 0 #0044dd;
+	border-radius: 2px;
+}
+
+h5 {
+	margin: 0;
+	background: #00aaee;
+	padding: 0.25em 0.5em;
+	margin-bottom: 0.5em;
+	color: white;
+	text-shadow: 1px 1px 0 #0044dd;
+	box-shadow: 1px 1px 0 #0044dd;
+	border-radius: 2px;
+	text-align: left;
+}
+
+h3 {
+	background: #777;
+	color: white;
+	padding: 0.5em;
+	position: relative;
+	margin: 0;
+	box-shadow: 1px 1px 2px #ddd;
+	text-shadow: 0 0 1px #000;
+}
+
+progress {
+	width: 100%;
+	margin: 2em 0;
+}
+
+input[type="file"] {
+	border: 1px solid #ccc;
+	width: 100%;
+	border-radius: 2px;
+	margin: 0.2em 0 0.8em 0;
+}
+
+div.select {
+	border: 1px solid #ccc;
+	border-bottom: 0;
+	background-color: #eee;
+	background-image: url(tri.png);
+	background-repeat: no-repeat;
+	background-position: 95%;
+	margin: 1em 0;
+	border-radius: 2px;
+}
+
+div.select:hover {
+	background-color: #f3f3f3;
+}
+
+div.clicked {
+	background: #f3f3f3;
+	box-shadow: 1px 1px 0 #999;
+}
+
+div.select div.option {
+	display: none;
+	padding: 0.25em;
+	border-bottom: 1px solid #ccc;
+}
+
+div.clicked div.option:hover {
+	background: #777;
+	color: white;
+}
+
+div.select div.selected {
+	display: block;
+}
+
+div.select div.option canvas {
+	border-radius: 0;
+	margin: 0;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+div.select div.option span {
+	display: inline-block;
+	padding: 0.5em 1em;
+	vertical-align: middle;
+}
+
+span.backprojection-container {
+    position: relative;
+    display: inline-block;
+}
+
+span.backprojection-container span.option-overlay {
+    position: absolute;
+    left: 405px;
+    display: none;
+}
+
+span.backprojection-container:hover span.option-overlay {
+    display: inline;
+    position: absolute;
+}
+
+.overlay-button {
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin-bottom: 6px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.overlay-button:hover {
+    background-color: #eee;
+    border: 1px solid #ccc;
+}
+
+input[type=button] {
+    width: 80%;
+    margin: 0 10%;
+    padding: 0.5em;
+}
+
+input[type=checkbox] {
+    vertical-align: bottom;
+}
+
+span.checkbox {
+    display: block;
+    margin: 0.5em 0 1em 0;
+    padding: 0.2em 0 0.4em 0;
+    font-size: 90%;
+    border: 1px solid #f9f9f9;
+    cursor: default;
+    user-select: none;
+}
+
+span.checkbox:hover {
+    border: 1px solid #ccc;
+}
