@@ -27,6 +27,8 @@ div.sino {
 #backprojections {
 	overflow-x: auto;
 	white-space: nowrap;
+    box-shadow: inset 0 0 3px #555;
+    padding: 8px;
 }
 
 div.settings {
