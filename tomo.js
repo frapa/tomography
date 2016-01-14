@@ -135,8 +135,12 @@ function drawFromData(data, cols, rows, id) {
 	var context = canvas.getContext('2d');
 	var imgdat = context.getImageData(0, 0, cols, rows);	
 	
-	var minimum = Math.min(...data);
-	var maximum = Math.max(...data);
+    // I do it this was because Chrome sucks.
+	var minimum = Infinity; 
+    for (var i = 0; i < data.length; i++) if (data[i] < minimum) minimum = data[i];
+	var maximum = -Infinity;
+    for (var i = 0; i < data.length; i++) if (data[i] > maximum) maximum = data[i];
+
 	for (var i = 0; i < rows; i++) {
 		for (var j = 0; j < cols; j++) {
 			var index = (i*cols + j);
@@ -200,7 +204,10 @@ function filter() {
 	drawSinogram(nproj);
 }
 
-function draw(arr, mul=50, reset=true) {
+function draw(arr, mul, reset) {
+    if (mul === undefined) mul = 50;
+    if (reset === undefined) reset = true;
+
 	var canvas = document.getElementById('scan');
 	var context = canvas.getContext('2d');
 	

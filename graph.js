@@ -40,8 +40,10 @@ Graph.prototype.convertCoord = function (x, y)
 	return [px, py];
 };
 
-Graph.prototype.plot = function (xs, ys, c='#f00')
+Graph.prototype.plot = function (xs, ys, c)
 {
+    if (c === undefined) c = '#f00';
+
 	this.context.beginPath();
 	this.context.strokeStyle = c;
 	
@@ -59,14 +61,18 @@ Graph.prototype.plot = function (xs, ys, c='#f00')
 	this.context.stroke(); 
 };
 
-Graph.prototype.clear = function (c='#fff')
+Graph.prototype.clear = function (c)
 {
+    if (c === undefined) c = '#fff';
+
 	this.context.fillStyle = c;
 	this.context.fillRect(0, 0, this.w, this.h);
 };
 
-function linspace(from, to, num=50)
+function linspace(from, to, num)
 {
+    if (num === undefined) num = 50;
+
 	var step = (to - from) / num;
 	var arr = [];
 	
